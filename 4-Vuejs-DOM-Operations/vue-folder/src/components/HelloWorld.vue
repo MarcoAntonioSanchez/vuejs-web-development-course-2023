@@ -7,6 +7,8 @@
     <h1 id="header">Header</h1> -->
     <h1>{{ msg }}</h1>
     <button @click="handleClick">Click</button>
+    <!-- Set 100 value as param for the handleClick2 function -->
+    <button @click="handleClick2(100)">Click</button>
   </div>
 </template>
 
@@ -17,6 +19,9 @@ export default {
     handleClick(event){
       console.log(event);
       event.target.style.backgroundColor="red"; // Using the event.target to specify the HTML tag
+    },
+    handleClick2(param){
+      console.log("PARAM",param); // Printing the assigned param to the click event
     }
   },
   data() {
