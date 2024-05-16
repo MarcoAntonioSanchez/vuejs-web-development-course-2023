@@ -3,8 +3,10 @@
     <!-- One way to bind a method on click in the button tag -->
     <!-- <button v-on:click="handleClick">Click</button> -->
     <!-- Alternative way to bind a method on click in the button tag -->
+    <!-- <button @click="handleClick">Click</button>
+    <h1 id="header">Header</h1> -->
+    <h1>{{ msg }}</h1>
     <button @click="handleClick">Click</button>
-    <h1 id="header">Header</h1>
   </div>
 </template>
 
@@ -12,9 +14,9 @@
 export default {
   name: 'HelloWorld',
   methods: { // You can add methods / functions to provide custom functionallity to the components structure like HTML tags
-    handleClick(){
-      const header = document.getElementById("header");
-      header.style.color="red";
+    handleClick(event){
+      console.log(event);
+      event.target.style.backgroundColor="red"; // Using the event.target to specify the HTML tag
     }
   },
   data() {
