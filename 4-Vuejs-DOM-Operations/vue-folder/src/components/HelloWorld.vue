@@ -1,21 +1,24 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2 :id="myH2">Hello</h2>
-    <div v-bind:id="myId">Hello my div: {{ myId }}</div>
-    <img v-bind:src="mySrc" alt="">
+  <div>
+    <!-- One way to bind a method on click in the button tag -->
+    <!-- <button v-on:click="handleClick">Click</button> -->
+    <!-- Alternative way to bind a method on click in the button tag -->
+    <button @click="handleClick">Click</button>
+    <h1 id="header">Header</h1>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  methods: { // You can add methods / functions to provide custom functionallity to the components structure like HTML tags
+    handleClick(){
+      const header = document.getElementById("header");
+      header.style.color="red";
+    }
+  },
   data() {
-    return {
-      myId: "divId",
-      myH2: "myH2",
-      mySrc: "https://img.freepik.com/premium-vector/raven-stylized-illustration-design-crow-logo-intricate-details_801948-7.jpg",
-    };
+    return {};
   },
   props: {
     msg: String
@@ -25,10 +28,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#divId {
-  background-color: red;
-}
-#myH2 {
-  background-color: cadetblue;
-}
+
 </style>
