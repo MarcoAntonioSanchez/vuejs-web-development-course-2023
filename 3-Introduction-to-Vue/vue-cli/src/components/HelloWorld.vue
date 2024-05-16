@@ -1,13 +1,18 @@
 <template>
   <div class="hello">Hello Vue.js</div>
   <div style="color:blue;background-color:black;padding:20px;">Hello Vue.js2</div>
+  <div>{{ msg }}</div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String,
+    msg: {
+      type: String,
+      required: true,
+      default: 'This is a default message',
+    },
   },
 };
 </script>

@@ -2,7 +2,8 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <h1 class="test">Test</h1>
   <TestClass />
-  <HelloWorld />
+  <HelloWorld msg="Hi friend..." />
+  <h1> {{ message }} </h1>
 </template>
 
 <script>
@@ -11,6 +12,11 @@ import HelloWorld from './components/HelloWorld.vue';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      message: 'Hello world!!!',
+    };
+  },
   components: {
     TestClass,
     HelloWorld,
