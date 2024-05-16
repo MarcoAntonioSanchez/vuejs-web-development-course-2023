@@ -9,12 +9,18 @@
     <!-- <button @click="handleClick">Click</button> -->
     <!-- Set 100 value as param for the handleClick2 function -->
     <!-- <button @click="handleClick2(100)">Click</button> -->
-    <form @submit.prevent="handleSubmit">
+    <!-- Event modifier "prevent" to prevent page refresh on form submit -->
+    <!-- <form @submit.prevent="handleSubmit">
       <input type="text"><br>
       <button type="submit">Submit</button>
-    </form>
-    <button @click.once="onBtnClick">Inc</button>
-    <p>{{ number }}</p>
+    </form> -->
+    <!-- Event modifier "once" to only be able to click once and thats it -->
+    <!-- <button @click.once="onBtnClick">Inc</button>
+    <p>{{ number }}</p> -->
+  <h1>2+5 {{ 2 + 6 }}</h1>
+  <h1>2+5 {{ new Date().toLocaleTimeString() }}</h1>
+  <h1>Hi my name is {{ "Jane".toUpperCase() }}</h1>
+  <h1>{{ sayHello() }}</h1>
   </div>
 </template>
 
@@ -34,6 +40,9 @@ export default {
     },
     onBtnClick() {
       this.number=this.number + 1;
+    },
+    sayHello() {
+      return "Hello!!!";
     }
   },
   data() {
