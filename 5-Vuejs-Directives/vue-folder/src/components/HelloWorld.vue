@@ -36,6 +36,13 @@
     <h1 v-else>Home</h1>
     <button @click="location= !location">Click</button>
   </div>
+  V-FOR
+  This one is for looping throught the array A, B, C
+  First (letter) value is the actual value in the array
+  While the (, i) value is the index of the loop
+  <div>
+    <div v-for="(letter, i) in alphabet" :key="letter">{{ letter }}--{{ i }}</div>
+  </div>
 -->
 <div></div>
 </template>
@@ -51,6 +58,7 @@ export default {
       myText: "Hello, How are you.",
       myContent: "<b style='color:red;'>Hello my content</b>",
       location: "A",
+      alphabet: ["A", "B", "C"]
     }
   },
   props: {
