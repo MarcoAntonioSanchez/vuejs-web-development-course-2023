@@ -51,6 +51,22 @@
     <input type="text" v-model="text" />
     {{ text }}
   </div>
+
+    V-ON
+  This one add's an event listener
+  The second example gives the same functionallity
+  <div>
+    <button v-on:click="onClick">Click</button>
+    <button @click="onClick">Click 2</button>
+  </div>
+    
+    V-PRE
+  This one is going to prevent the span HTML tag to compile
+  v-pre is recommended to use for speed up static parts of the component's template
+  <div>
+    <span v-pre>{{ myName }}</span><br>
+    <span>{{ myName }}</span>
+  </div>
 -->
 <div></div>
 </template>
@@ -58,7 +74,11 @@
 <script>
 export default {
   name: 'HelloWorld',
-  methods: {},
+  methods: {
+    onClick() {
+      console.log("Hello there");
+    }
+  },
   data() {
     return {
       isShowing: true,
