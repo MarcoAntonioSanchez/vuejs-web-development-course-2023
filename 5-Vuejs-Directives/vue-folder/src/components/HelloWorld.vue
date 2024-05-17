@@ -28,6 +28,14 @@
     This will toggle between true and false, hiding the element at false
     <button @click="isShowing = !isShowing">Click</button>
   </div>
+  
+    V-IF | V-ELSE-IF | V-ELSE
+  <div>  
+    <h1 v-if="location==='A'">A</h1>
+    <h1 v-else-if="location==='B'">B</h1>
+    <h1 v-else>Home</h1>
+    <button @click="location= !location">Click</button>
+  </div>
 -->
 <div></div>
 </template>
@@ -41,7 +49,8 @@ export default {
       isShowing: true,
       myName: "Jane",
       myText: "Hello, How are you.",
-      myContent: "<b style='color:red;'>Hello my content</b>"
+      myContent: "<b style='color:red;'>Hello my content</b>",
+      location: "A",
     }
   },
   props: {
