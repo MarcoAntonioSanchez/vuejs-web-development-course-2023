@@ -6,19 +6,27 @@
   This one don't
   <div v-html="myContent"></div>
   
-  V-TEXT
+    V-TEXT
   This one shows the "Hello, How are you. string"
   <div>
   <h1 v-text="myText"></h1>
   </div>
 
-  V-ONCE
+    V-ONCE
   <div>
     This one is only "loaded" once, so the button that trigger myName won't work here
     <h1 v-once>{{ myName }}</h1>
     But in this one, will work and change the "Jane" string for "New Name" string
     <h1>{{ myName }}</h1>
     <button @click="myName='New Name'">Click</button>
+  </div>
+
+    V-SHOW
+  <div>
+    This one is shown by default
+    <h1 v-show="isShowing">I am here</h1>
+    This will toggle between true and false, hiding the element at false
+    <button @click="isShowing = !isShowing">Click</button>
   </div>
 -->
 <div></div>
@@ -30,6 +38,7 @@ export default {
   methods: {},
   data() {
     return {
+      isShowing: true,
       myName: "Jane",
       myText: "Hello, How are you.",
       myContent: "<b style='color:red;'>Hello my content</b>"
