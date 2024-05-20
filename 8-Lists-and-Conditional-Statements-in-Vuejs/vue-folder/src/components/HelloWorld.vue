@@ -27,7 +27,12 @@
       </h1>
     </div>
   -->
-  <div></div>
+
+  <div v-for="(item, index) in myList" :key="index">
+    <h1 @click="removeData(index)" class="header">
+      {{ item.name }}
+    </h1>
+  </div>
 </template>
 
 <script>
@@ -36,6 +41,9 @@ export default {
   methods: { // New function to receive "name" on click over the div container
     myData(data) { // name is used to send it, data will receive it
       console.log(data); // Get's printed in console
+    },
+    removeData(index) {
+      this.myList.splice(index, 1) // Using splice method to separate attribute index with position 1
     }
   },
   data() {
