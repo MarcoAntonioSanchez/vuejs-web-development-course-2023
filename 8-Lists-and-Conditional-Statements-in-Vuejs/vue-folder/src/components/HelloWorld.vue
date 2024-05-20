@@ -18,6 +18,14 @@
         {{ name }}
       </h1>
     </div>
+    
+    SENDING DATA IN LIST TO FUNCTION
+    Using @click to run the myData function, allong with the name attribute passed
+    <div @click="myData(name)" v-for="{ name, id, isActive } in myList" :key="id">
+      <h1 v-if="isActive" class="header">
+        {{ name }}
+      </h1>
+    </div>
   -->
   <div></div>
 </template>
@@ -25,7 +33,11 @@
 <script>
 export default {
   name: 'HelloWorld',
-  methods: {},
+  methods: { // New function to receive "name" on click over the div container
+    myData(data) { // name is used to send it, data will receive it
+      console.log(data); // Get's printed in console
+    }
+  },
   data() {
     return {
       myList: [
