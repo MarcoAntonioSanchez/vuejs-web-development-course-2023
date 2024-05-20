@@ -1,15 +1,22 @@
 <template>
   <!--
+    RENDERING LIST
     Generating name's list by binding with v-for, using item's id as key
     <div v-for="item in myList" :key="item.id">
       {{ item.name }}
     </div>
-  -->
 
-  <!--
     Destructuring the data inside myList, same result as above
     <div v-for="{ name, id } in myList" :key="id">
       {{ name }}
+    </div>
+
+    USING CONDITIONAL EXPRESSIONS IN LISTS
+    <div v-for="{ name, id, isActive } in myList" :key="id">
+      If the attribute is true, HTML tag H1 is shown, otherwise it won't be displayed
+      <h1 v-if="isActive" class="header">
+        {{ name }}
+      </h1>
     </div>
   -->
   <div></div>
@@ -24,15 +31,18 @@ export default {
       myList: [
         {
           id: 1,
-          name: "John"
+          name: "John",
+          isActive: true, // Boolean comprobation added to the objects attributes
         },
         {
           id: 2,
-          name: "Jack"
+          name: "Jack",
+          isActive: false,
         },
         {
           id: 3,
-          name: "Raven"
+          name: "Raven",
+          isActive: true,
         }
       ]
     }
@@ -45,5 +55,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.header {
+  border: 1px solid orangered;
+  background-color: orangered;
+  color: black;
+  padding: 1rem;
+}
 </style>
